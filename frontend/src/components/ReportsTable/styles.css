@@ -1,0 +1,27 @@
+.reports-container {
+  width: 100%;
+  background: white;
+  border-radius: 5px;
+  padding-bottom: 15px;
+}
+
+.reports-table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.reports-table caption {
+  text-align: left;
+  padding: 15px 0 15px 15px;
+}
+
+.header {
+}
+
+.reports-table .item {
+}
+
+.reports-table td, th {
+  /*border: 1px solid #ddd;*/
+}

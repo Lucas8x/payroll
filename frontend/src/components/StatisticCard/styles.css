@@ -1,0 +1,20 @@
+.info-card {
+  width: 100%;
+  max-width: 200px;
+  height: 75px;
+  max-height: 80px;
+  background:#2e51a2;
+  /* border: 1px solid white; */
+  border: 0;
+  border-radius: 5px;
+  color: #FFF;
+  padding: 10px;
+}
+
+.info-card p {
+  font-weight: bold;
+}
+
+.info-card span {
+  font-size: 25px;
+}
