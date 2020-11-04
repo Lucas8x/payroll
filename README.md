@@ -1,6 +1,8 @@
 # payroll
 
 ![License](https://img.shields.io/github/license/lucas8x/payroll?style=flat-square)
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Payroll&uri=https%3A%2F%2Fraw.githubusercontent.com%2FLucas8x%2Fpayroll%2Fmain%2Fbackend%2FInsomnia.json)
  
 ## Tecnologias
 
