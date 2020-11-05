@@ -1,9 +1,10 @@
 import Knex from 'knex';
 
 export async function up(knex: Knex) {
-  return knex.schema.createTable('relatorios', table => {
+  return knex.schema.createTable('relatorios', (table) => {
     table.increments('id').primary();
-    table.integer('autor_id')
+    table
+      .integer('autor_id')
       .notNullable()
       .references('id')
       .inTable('funcionarios');

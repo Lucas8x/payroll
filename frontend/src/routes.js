@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
-import { useAuth } from './contexts/auth'
+import { useAuth } from './contexts/auth';
 import Sidebar from './components/Sidebar';
 
 import Login from './pages/Login';
@@ -12,22 +12,23 @@ import Reports from './pages/Reports';
 import Positions from './pages/Positions';
 import Account from './pages/Account';
 
-
-const PrivateRoute = ({ component: Component, ...rest}) => {
+const PrivateRoute = ({ component: Component, ...rest }) => {
   const { signed } = useAuth();
   return (
     <>
       <Sidebar />
       <Route
         {...rest}
-        render={props =>
-        signed
-        ? (<Component {...props} /> )
-        : (<Redirect to={{ pathname: '/', state: { from: props.location } }} />)
-      }
+        render={(props) =>
+          signed ? (
+            <Component {...props} />
+          ) : (
+            <Redirect to={{ pathname: '/', state: { from: props.location } }} />
+          )
+        }
       />
     </>
-  )
+  );
 };
 
 export default () => (

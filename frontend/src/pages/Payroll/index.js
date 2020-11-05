@@ -6,5 +6,5 @@ export default function Payroll() {
     <div className='payroll-page'>
       <h1>payroll</h1>
     </div>
-  )
+  );
 }

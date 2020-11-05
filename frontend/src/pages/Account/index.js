@@ -6,5 +6,5 @@ export default function Account() {
     <div className='account-page'>
       <h1>Account</h1>
     </div>
-  )
+  );
 }

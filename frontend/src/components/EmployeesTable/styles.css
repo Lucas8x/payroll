@@ -14,9 +14,9 @@
 }
 
 .employees-container ul li {
+  display: flex;
   background: white;
   border: 1px;
-  display: flex;
   width: 100%;
   padding: 20px;
   margin-bottom: 15px;
@@ -29,6 +29,9 @@
   border-width: 2px;
   border-style: solid;
   border-color: white;
+}
+
+.actions {
 }
 
 .actionButton {

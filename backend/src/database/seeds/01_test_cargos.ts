@@ -5,8 +5,8 @@ export async function seed(knex: Knex) {
     {
       nome: 'Engenheiro',
       desc: 'descrição',
-      salario_minimo: 8000.50,
-      salario_maximo: 15000.10
+      salario_minimo: 8000.5,
+      salario_maximo: 15000.1,
     },
   ]);
 }

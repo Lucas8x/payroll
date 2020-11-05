@@ -6,5 +6,5 @@ export default function Reports() {
     <div className='reports-page'>
       <h1>Reports</h1>
     </div>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useContext} from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 
 import api from '../services/api';
@@ -7,7 +7,7 @@ import fakeSignIn from '../services/fake-auth';
 const AuthContext = createContext({
   signed: false,
   user: null,
-  loading: false
+  loading: false,
 });
 
 const AuthProvider = ({ children }) => {
@@ -43,7 +43,8 @@ const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{signed: !!user, user, loading, signIn, signOut}}>
+      value={{ signed: !!user, user, loading, signIn, signOut }}
+    >
       {children}
     </AuthContext.Provider>
   );
@@ -59,4 +60,4 @@ function useAuth() {
   return context;
 }
 
-export { AuthProvider, useAuth }
+export { AuthProvider, useAuth };

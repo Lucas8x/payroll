@@ -5,7 +5,7 @@ export async function seed(knex: Knex) {
     {
       autor_id: 1,
       assunto: 'Resolução da questão',
-      texto: 'Você deve conseguir 1 balde'
+      texto: 'Você deve conseguir 1 balde',
     },
   ]);
 }

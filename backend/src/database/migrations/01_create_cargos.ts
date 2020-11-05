@@ -1,7 +1,7 @@
 import Knex from 'knex';
 
 export async function up(knex: Knex) {
-  return knex.schema.createTable('cargos', table => {
+  return knex.schema.createTable('cargos', (table) => {
     table.increments('id').primary();
     table.string('nome').notNullable().unique();
     table.string('desc');

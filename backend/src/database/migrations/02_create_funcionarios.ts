@@ -1,7 +1,7 @@
 import Knex from 'knex';
 
 export async function up(knex: Knex) {
-  return knex.schema.createTable('funcionarios', table => {
+  return knex.schema.createTable('funcionarios', (table) => {
     table.increments('id').primary();
     table.boolean('active').defaultTo(true);
     table.string('avatar');
@@ -12,10 +12,7 @@ export async function up(knex: Knex) {
     table.string('rg').notNullable();
     table.string('estado_civil');
     table.string('tipo_sanguineo');
-    table.integer('cargo_id')
-      .notNullable()
-      .references('id')
-      .inTable('cargos');
+    table.integer('cargo_id').notNullable().references('id').inTable('cargos');
     table.timestamp('created_at').defaultTo(knex.fn.now());
   });
 }

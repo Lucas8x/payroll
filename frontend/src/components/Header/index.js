@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-import avatar from '../../assets/avatar.png'
+import avatar from '../../assets/avatar.png';
 
 export default function Header() {
   return (
@@ -16,5 +16,5 @@ export default function Header() {
         </div>
       </div>
     </div>
-  )
+  );
 }

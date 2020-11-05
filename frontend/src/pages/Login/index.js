@@ -25,18 +25,18 @@ export default function Login() {
           type='text'
           placeholder='Digite seu usuario'
           value={username}
-          onChange={e => setUsername(e.target.value)}
+          onChange={(e) => setUsername(e.target.value)}
         />
 
         <input
           type='password'
           value={password}
           placeholder='Digite sua senha'
-          onChange={e => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
         />
 
         <button type='submit'>Entrar</button>
       </form>
     </div>
-  )
+  );
 }

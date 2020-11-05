@@ -2,13 +2,13 @@ import express, { Request, Response } from 'express';
 import multer from 'multer';
 
 import uploadConfig from './config/upload';
-import CargosControlller from './controllers/CargosController';
+import CargosController from './controllers/CargosController';
 import DashboardController from './controllers/DashboardController';
 import FolhaDePagamentoController from './controllers/FolhaDePagamentoController';
 import FuncionariosController from './controllers/FuncionariosController';
 import RelatoriosController from './controllers/RelatoriosController';
 
-const cargosController = new CargosControlller();
+const cargosController = new CargosController();
 const funcionariosController = new FuncionariosController();
 const folhaDePagamentoController = new FolhaDePagamentoController();
 const dashboardController = new DashboardController();
@@ -33,7 +33,11 @@ routes.delete('/cargos/:id', cargosController.delete);
 // Funcionarios
 routes.get('/funcionarios', funcionariosController.index);
 routes.get('/funcionarios/:id', funcionariosController.show);
-routes.post('/funcionarios', upload.single('avatar'), funcionariosController.create);
+routes.post(
+  '/funcionarios',
+  upload.single('avatar'),
+  funcionariosController.create
+);
 routes.put('/funcionarios/:id', funcionariosController.update);
 routes.delete('/funcionarios/:id', funcionariosController.delete);
 
@@ -47,6 +51,5 @@ routes.get('/relatorios/:id', relatoriosController.show);
 routes.post('/relatorios', relatoriosController.create);
 routes.put('/relatorios/:id', relatoriosController.update);
 routes.delete('/relatorios/:id', relatoriosController.delete);
-
 
 export default routes;

@@ -11,7 +11,7 @@ export async function seed(knex: Knex) {
       rg: '1234567-8',
       estado_civil: 'solteiro',
       tipo_sanguineo: 'O+',
-      cargo_id: 1
+      cargo_id: 1,
     },
   ]);
 }

@@ -6,7 +6,7 @@ export default function signIn() {
         user: {
           name: 'Lucas',
           user_type: 'Dev',
-        }
+        },
       });
     }, 2000);
   });

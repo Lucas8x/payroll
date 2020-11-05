@@ -13,7 +13,7 @@ export default class CargosController {
 
     if (!cargo) {
       return res.status(400).json({
-        error: 'Esse cargo não existe.'
+        error: 'Esse cargo não existe.',
       });
     }
 
@@ -25,17 +25,20 @@ export default class CargosController {
     const trx = await db.transaction();
 
     try {
-      await trx('cargos').insert(
-        { nome, desc, salario_minimo, salario_maximo },
-      );
+      await trx('cargos').insert({
+        nome,
+        desc,
+        salario_minimo,
+        salario_maximo,
+      });
       await trx.commit();
       return res.status(201).json({
-        response: 'Cargo criado com sucesso.'
+        response: 'Cargo criado com sucesso.',
       });
     } catch (error) {
       await trx.rollback();
       return res.status(400).json({
-        error: 'Erro inesperado ao criar cargo.'
+        error: 'Erro inesperado ao criar cargo.',
       });
     }
   }
@@ -43,29 +46,24 @@ export default class CargosController {
   async update(req: Request, res: Response) {
     const { id } = req.params;
 
-    const cargo = await db('cargos')
-      .select('id')
-      .where('id', id)
-      .first();
+    const cargo = await db('cargos').select('id').where('id', id).first();
 
     if (!cargo) {
       return res.status(400).json({
-        error: 'Esse cargo não existe.'
+        error: 'Esse cargo não existe.',
       });
     }
 
     const { nome, desc, salario_minimo, salario_maximo } = req.body;
-    await db('cargos')
-      .where('id', id)
-      .update({
-        nome,
-        desc,
-        salario_minimo,
-        salario_maximo
-      });
+    await db('cargos').where('id', id).update({
+      nome,
+      desc,
+      salario_minimo,
+      salario_maximo,
+    });
 
     return res.json({
-      response: 'Cargo modificado com sucesso.'
+      response: 'Cargo modificado com sucesso.',
     });
   }
 
@@ -75,16 +73,14 @@ export default class CargosController {
     const cargo = await db('cargos').select('id').where('id', id).first();
     if (!cargo) {
       return res.status(400).json({
-        error: 'Esse cargo não existe.'
+        error: 'Esse cargo não existe.',
       });
     }
 
-    await db('cargos')
-      .where('id', id)
-      .del();
+    await db('cargos').where('id', id).del();
 
     return res.json({
-      response: 'Cargo deletado com sucesso.'
+      response: 'Cargo deletado com sucesso.',
     });
   }
 }

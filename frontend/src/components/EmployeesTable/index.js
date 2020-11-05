@@ -6,23 +6,27 @@ import { ExternalLink, Edit, Trash2 } from 'react-feather';
 import avatar from '../../assets/avatar.png';
 
 export default function EmployeesTable({ data }) {
-  function handleEdit(id) {
-  }
+  function handleShow(id) {}
+  function handleEdit(id) {}
+  function handleDelete(id) {}
 
   return (
     <div className='employees-container'>
       <ul>
-        {data.map(employee => (
+        {data.map((employee) => (
           <li key={employee.id}>
-            <img src={avatar} alt=''/>
+            <img src={employee.avatar ? employee.avatar : avatar} alt='' />
             <div>
               <div className='info'>
-                <p>{employee.name}</p>
+                <p>{employee.nome}</p>
                 <span>{employee.cargo}</span>
               </div>
 
               <div className='actions'>
-                <button className='actionButton'>
+                <button
+                  className='actionButton'
+                  onClick={() => handleShow(employee.id)}
+                >
                   <ExternalLink />
                 </button>
 
@@ -33,7 +37,10 @@ export default function EmployeesTable({ data }) {
                   <Edit />
                 </button>
 
-                <button className='actionButton'>
+                <button
+                  className='actionButton'
+                  onClick={() => handleDelete(employee.id)}
+                >
                   <Trash2 />
                 </button>
               </div>
@@ -43,5 +50,4 @@ export default function EmployeesTable({ data }) {
       </ul>
     </div>
   );
-
 }

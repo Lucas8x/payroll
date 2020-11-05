@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { Home, Users, DollarSign,
-  Clipboard, Briefcase, User, LogOut } from 'react-feather';
+import {
+  Home,
+  Users,
+  DollarSign,
+  Clipboard,
+  Briefcase,
+  User,
+  LogOut,
+} from 'react-feather';
 
 import './styles.css';
 import { useAuth } from '../../contexts/auth';
@@ -35,7 +42,8 @@ export default function Sidebar() {
             className={activeTab === 'dashboard' ? 'selected' : ''}
             onClick={handleTabClick}
           >
-            <Home />Inicio
+            <Home />
+            Inicio
           </button>
 
           <button
@@ -43,7 +51,8 @@ export default function Sidebar() {
             className={activeTab === 'employees' ? 'selected' : ''}
             onClick={handleTabClick}
           >
-            <Users />Funcionarios
+            <Users />
+            Funcionarios
           </button>
 
           <button
@@ -52,7 +61,9 @@ export default function Sidebar() {
             onClick={handleTabClick}
           >
             <DollarSign />
-            <span>Folha de <br></br> Pagamento</span>
+            <span>
+              Folha de <br></br> Pagamento
+            </span>
           </button>
 
           <button
@@ -60,7 +71,8 @@ export default function Sidebar() {
             className={activeTab === 'reports' ? 'selected' : ''}
             onClick={handleTabClick}
           >
-            <Clipboard />Relatórios
+            <Clipboard />
+            Relatórios
           </button>
 
           <button
@@ -68,7 +80,8 @@ export default function Sidebar() {
             className={activeTab === 'positions' ? 'selected' : ''}
             onClick={handleTabClick}
           >
-            <Briefcase />Cargos
+            <Briefcase />
+            Cargos
           </button>
 
           <button
@@ -76,17 +89,21 @@ export default function Sidebar() {
             className={activeTab === 'account' ? 'selected' : ''}
             onClick={handleTabClick}
           >
-            <User />Conta
+            <User />
+            Conta
           </button>
 
           <button
             value='logout'
-            onClick={() => {signOut(() => history.push('/'))}}
+            onClick={() => {
+              signOut(() => history.push('/'));
+            }}
           >
-            <LogOut />Sair
+            <LogOut />
+            Sair
           </button>
         </div>
       </div>
     </div>
-  )
+  );
 }

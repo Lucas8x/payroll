@@ -9,4 +9,4 @@ export const imageDelete = async (filename: string, callback: Function) => {
       callback();
     }
   });
-}
+};

@@ -9,7 +9,7 @@ export default class RelatoriosController {
         'relatorios.id',
         'relatorios.assunto',
         'relatorios.created_at',
-        'funcionarios.nome as autor'
+        'funcionarios.nome as autor',
       ]);
 
     return res.json(relatorios);
@@ -25,7 +25,7 @@ export default class RelatoriosController {
 
     if (!relatorio) {
       return res.status(400).json({
-        error: 'Esse relatorio não existe.'
+        error: 'Esse relatorio não existe.',
       });
     }
 
@@ -39,12 +39,12 @@ export default class RelatoriosController {
       await trx('relatorios').insert({ autor_id, assunto, texto });
       await trx.commit();
       return res.status(201).json({
-        response: 'Relatorio criado com sucesso.'
+        response: 'Relatorio criado com sucesso.',
       });
     } catch (error) {
       await trx.rollback();
       return res.status(400).json({
-        error: 'Erro inesperado ao criar relatorio.'
+        error: 'Erro inesperado ao criar relatorio.',
       });
     }
   }
@@ -59,17 +59,15 @@ export default class RelatoriosController {
 
     if (!relatorio) {
       return res.status(400).json({
-        error: 'Esse relatorio não existe.'
+        error: 'Esse relatorio não existe.',
       });
     }
 
     const { autor_id, assunto, texto } = req.body;
-    await db('relatorios')
-      .where('id', id)
-      .update({ autor_id, assunto, texto });
+    await db('relatorios').where('id', id).update({ autor_id, assunto, texto });
 
     return res.json({
-      response: 'Relatorio modificado com sucesso.'
+      response: 'Relatorio modificado com sucesso.',
     });
   }
 
@@ -82,16 +80,14 @@ export default class RelatoriosController {
 
     if (!relatorio) {
       return res.status(400).json({
-        error: 'Esse relatorio não existe.'
+        error: 'Esse relatorio não existe.',
       });
     }
 
-    await db('relatorios')
-      .where('id', id)
-      .del();
+    await db('relatorios').where('id', id).del();
 
     return res.json({
-      response: 'Relatorio deletado com sucesso.'
+      response: 'Relatorio deletado com sucesso.',
     });
   }
 }

@@ -2,11 +2,11 @@ import React from 'react';
 import './App.css';
 
 import Routes from './routes';
-import { AuthProvider } from './contexts/auth'
+import { AuthProvider } from './contexts/auth';
 
 export default function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <AuthProvider>
         <Routes />
       </AuthProvider>

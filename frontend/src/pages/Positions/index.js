@@ -6,5 +6,5 @@ export default function Positions() {
     <div className='positions-page'>
       <h1>Positions</h1>
     </div>
-  )
+  );
 }
