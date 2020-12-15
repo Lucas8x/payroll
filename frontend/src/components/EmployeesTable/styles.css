@@ -1,4 +1,4 @@
-.employees-container {
+.employees-table-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,13 +7,13 @@
   margin-right: 5px;
 }
 
-.employees-container ul {
+.employees-table-container ul {
   width: 100%;
   margin-top: 5%;
   list-style: none;
 }
 
-.employees-container ul li {
+.employees-table-container ul li {
   display: flex;
   background: white;
   border: 1px;
@@ -22,7 +22,7 @@
   margin-bottom: 15px;
 }
 
-.employees-container ul li img {
+.employees-table-container ul li img {
   width: 50px;
   height: 50px;
   border-radius: 50%;

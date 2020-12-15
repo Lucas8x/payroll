@@ -1,0 +1,18 @@
+.input-block {
+  position: relative;
+}
+
+.input-block .input-field {
+  width: 100%;
+  height: 50px;
+  outline: 0;
+  padding: 0 1.6rem;
+  display: flex;
+  align-items: center;
+}
+
+.input-field input::-webkit-outer-spin-button,
+.input-field input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

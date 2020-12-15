@@ -31,16 +31,19 @@ export default function Dashboard() {
     // test
     setNewEmployees([
       {
+        id: 1,
         avatar: avatarTest,
         line1: 'Lucas',
         line2: 'Estudante',
       },
       {
+        id: 2,
         avatar: avatarTest,
         line1: 'Lucas',
         line2: 'Estudante',
       },
       {
+        id: 3,
         avatar: avatarTest,
         line1: 'Lucas',
         line2: 'Estudante',
@@ -48,18 +51,21 @@ export default function Dashboard() {
     ]);
     setEmployeeHistory([
       {
+        id: 1,
         avatar: avatarTest,
         line1: 'O cargo de Lucas foi alterado',
         line2: moment().format('lll'),
       },
       {
+        id: 2,
         avatar: avatarTest,
-        line1: 'O cargo de Lucas foi alterado',
+        line1: 'O cargo de João foi alterado',
         line2: moment().format('lll'),
       },
       {
+        id: 3,
         avatar: avatarTest,
-        line1: 'O cargo de Lucas foi alterado',
+        line1: 'O cargo de Maria foi alterado',
         line2: moment().format('lll'),
       },
     ]);

@@ -25,7 +25,7 @@ export default function Sidebar() {
       history.push('/');
     }
     setActiveTab(tab);
-    history.push(tab);
+    history.push(`/${tab}`);
   }
 
   return (

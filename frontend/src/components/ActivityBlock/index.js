@@ -7,7 +7,7 @@ export default function ActivityBlock({ title, data }) {
       <header className='title'>{title}</header>
       <ul>
         {data.map((item) => (
-          <li>
+          <li key={item.id}>
             <img src={item.avatar} alt='' />
             <div className='info'>
               <p>{item.line1}</p>

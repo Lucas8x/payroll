@@ -7,6 +7,7 @@ import Sidebar from './components/Sidebar';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Employees from './pages/Employees';
+import CreateEmployee from './pages/CreateEmployee';
 import Payroll from './pages/Payroll';
 import Reports from './pages/Reports';
 import Positions from './pages/Positions';
@@ -31,12 +32,13 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   );
 };
 
-export default () => (
+const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route path='/' exact component={Login} />
       <PrivateRoute path='/dashboard' component={Dashboard} />
-      <PrivateRoute path='/employees' component={Employees} />
+      <PrivateRoute path='/employees' exact component={Employees} />
+      <PrivateRoute path='/employees/create' exact component={CreateEmployee} />
       <PrivateRoute path='/payroll' component={Payroll} />
       <PrivateRoute path='/reports' component={Reports} />
       <PrivateRoute path='/positions' component={Positions} />
@@ -44,3 +46,5 @@ export default () => (
     </Switch>
   </BrowserRouter>
 );
+
+export default Routes;
