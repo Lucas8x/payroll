@@ -39,7 +39,17 @@ export default class FuncionariosController {
   }
 
   async create(req: Request, res: Response) {
-    const { active, nome, cpf, telefone, data_nascimento, cargo_id } = req.body;
+    const {
+      active,
+      nome,
+      cpf,
+      telefone,
+      data_nascimento,
+      cargo_id,
+      rg,
+      estado_civil,
+      tipo_sanguineo,
+    } = req.body;
     const avatar = req.file?.filename || null;
 
     const trx = await db.transaction();
@@ -52,6 +62,9 @@ export default class FuncionariosController {
         cpf,
         telefone,
         data_nascimento,
+        rg,
+        estado_civil,
+        tipo_sanguineo,
         cargo_id,
       });
       await trx.commit();
@@ -60,6 +73,7 @@ export default class FuncionariosController {
       });
     } catch (error) {
       await trx.rollback();
+      console.log(`[ERROR][FUNCIONARIO][CREATE]: ${error}`);
       return res.status(400).json({
         error: 'Erro inesperado ao criar funcionario.',
       });

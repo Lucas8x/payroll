@@ -42,8 +42,8 @@ routes.put('/funcionarios/:id', funcionariosController.update);
 routes.delete('/funcionarios/:id', funcionariosController.delete);
 
 // Folha de Pagamento
-routes.get('/folha/:id', funcionariosController.index);
-routes.post('/folha', funcionariosController.create);
+routes.get('/folha/:id', folhaDePagamentoController.index);
+routes.post('/folha', folhaDePagamentoController.create);
 
 // Relatorios
 routes.get('/relatorios', relatoriosController.index);
