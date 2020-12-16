@@ -6,15 +6,21 @@ import { useAuth } from '../../contexts/auth';
 
 export default function Login() {
   const history = useHistory();
-  const { signIn } = useAuth();
+  const { signIn, signed } = useAuth();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
-    signIn();
-    history.push('/dashboard');
+    if (username === 'adm' && password === 'adm') {
+      setError('');
+      signIn();
+      if (signed) {
+        history.push('/dashboard');
+      }
+    }
+    setError('Usuario ou Senha incorretos');
   }
 
   return (

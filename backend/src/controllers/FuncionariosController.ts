@@ -94,7 +94,17 @@ export default class FuncionariosController {
       });
     }
 
-    const { active, nome, cpf, telefone, data_nascimento, cargo_id } = req.body;
+    const {
+      active,
+      nome,
+      cpf,
+      telefone,
+      data_nascimento,
+      cargo_id,
+      rg,
+      estado_civil,
+      tipo_sanguineo,
+    } = req.body;
     //const avatar = req.file?.filename || null;
 
     await db('funcionarios').where('id', id).update({
@@ -103,6 +113,9 @@ export default class FuncionariosController {
       cpf,
       telefone,
       data_nascimento,
+      rg,
+      estado_civil,
+      tipo_sanguineo,
       cargo_id,
     });
 
