@@ -5,3 +5,21 @@
   padding-right: 20px;
   margin-left: 200px;
 }
+
+.add-button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2e51a2;
+  border-radius: 20px;
+  width: 64px;
+  height: 64px;
+  right: 40px;
+  bottom: 40px;
+  transition: background-color 0.2s;
+}
+
+.add-button:hover {
+  background: #1e356b;
+}

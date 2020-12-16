@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import './styles.css';
+import { Plus } from 'react-feather';
 
+import './styles.css';
 import api from '../../services/api';
 import EmployeesTable from '../../components/EmployeesTable';
 
 export default function Employees() {
   const history = useHistory();
   const [employees, setEmployees] = useState([]);
-
-  function handleNavigateToCreate() {
-    history.push('/employees/create');
-  }
 
   useEffect(() => {
     api.get('funcionarios').then((response) => {
@@ -21,7 +18,9 @@ export default function Employees() {
 
   return (
     <div className='employees-page'>
-      <button onClick={handleNavigateToCreate}>criar</button>
+      <Link to='/employees/create' className='add-button'>
+        <Plus size={32} color='#FFF' />
+      </Link>
       <EmployeesTable data={employees} />
     </div>
   );
